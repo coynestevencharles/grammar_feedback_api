@@ -2,7 +2,6 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import asyncio
 from contextlib import asynccontextmanager
-from dotenv import load_dotenv
 import logging
 import spacy
 import uuid
@@ -36,7 +35,7 @@ nlp = None
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
+async def lifespan(application: FastAPI):
     """Load resources once at startup and clean up at shutdown."""
     global nlp, errant_annotator, correction_llm, explanation_llm, feedback_llm
     nlp = spacy.load("en_core_web_sm")
@@ -54,11 +53,11 @@ async def lifespan(app: FastAPI):
     del feedback_llm
 
 
-app = FastAPI(lifespan=lifespan)
+application = FastAPI(lifespan=lifespan)
 
 # TODO: Determine how to use CORS for the AWS deployment
 # CORS settings
-app.add_middleware(
+application.add_middleware(
     CORSMiddleware,
     allow_origins=config.ALLOWED_ORIGINS,
     allow_credentials=True,
@@ -67,7 +66,7 @@ app.add_middleware(
 )
 
 
-@app.get("/health")
+@application.get("/health")
 async def health_check():
     """Health check endpoint."""
     # Check if the resources are loaded
@@ -87,7 +86,7 @@ async def health_check():
     return {"status": "ok"}
 
 
-@app.post("/grammar_feedback/", response_model=feedbackResponse)
+@application.post("/grammar_feedback/", response_model=feedbackResponse)
 async def grammar_feedback(request: userRequest):
     response_id = str(uuid.uuid4())
     # Initialize the dictionary to store all data for analysis
