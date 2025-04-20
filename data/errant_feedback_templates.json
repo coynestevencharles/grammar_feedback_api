@@ -1,0 +1,155 @@
+{
+    "Default": {
+        "M": {
+            "feedback_explanation": "Something seems to be missing in this part of the sentence.",
+            "feedback_suggestion": "Consider inserting \"{corrected_str}\" here."
+        },
+        "R": {
+            "feedback_explanation": "\"{source_str}\" might not be the best choice in this context.",
+            "feedback_suggestion": "Consider replacing \"{source_str}\" with \"{corrected_str}.\""
+        },
+        "U": {
+            "feedback_explanation": "\"{source_str}\" seems to be unnecessary or incorrect in this part of the sentence.",
+            "feedback_suggestion": "Consider removing \"{source_str}.\""
+        }
+    },
+    "ADJ": {
+        "title": "Adjective"
+    },
+    "ADJ:FORM": {
+        "title": "Adjective Form",
+        "R": {
+            "feedback_explanation": "The form of the adjective \"{source_str}\" does not seem right here.",
+            "feedback_suggestion": "Consider changing \"{source_str}\" to \"{corrected_str}.\""
+        }
+    },
+    "ADV": {
+        "title": "Adverb"
+    },
+    "CONJ": {
+        "title": "Conjunction"
+    },
+    "CONTR": {
+        "title": "Contraction"
+    },
+    "DET": {
+        "title": "Determiner"
+    },
+    "NOUN": {
+        "title": "Noun"
+    },
+    "NOUN:POSS": {
+        "title": "Possessive Noun"
+    },
+    "OTHER": {
+        "title": "Other"
+    },
+    "PART": {
+        "title": "Particle"
+    },
+    "PREP": {
+        "title": "Preposition"
+    },
+    "PRON": {
+        "title": "Pronoun"
+    },
+    "PUNCT": {
+        "title": "Punctuation",
+        "M": {
+            "feedback_explanation": "Punctuation seems to be missing here.",
+            "feedback_suggestion": "Consider adding the punctuation mark \"{corrected_str}\""
+        },
+        "R": {
+            "feedback_explanation": "The punctuation mark \"{source_str}\" may not be correct in this context.",
+            "feedback_suggestion": "Consider replacing \"{source_str}\" with \"{corrected_str}\""
+        },
+        "U": {
+            "feedback_explanation": "The punctuation mark \"{source_str}\" seems unnecessary here.",
+            "feedback_suggestion": "Consider removing \"{source_str}\""
+        }
+    },
+    "VERB": {
+        "title": "Verb"
+    },
+    "VERB:FORM": {
+        "title": "Verb Form",
+        "R": {
+            "feedback_explanation": "The form of the verb \"{source_str}\" (infinitive, gerund, participle, etc.) might be incorrect here.",
+            "feedback_suggestion": "Consider changing \"{source_str}\" to the form \"{corrected_str}.\""
+        }
+    },
+    "VERB:TENSE": {
+        "title": "Verb Tense",
+        "R": {
+            "feedback_explanation": "The tense of the verb \"{source_str}\" may not be right in this context.",
+            "feedback_suggestion": "Consider changing \"{source_str}\" to a different tense."
+        }
+    },
+    "MORPH": {
+        "title": "Morphology",
+        "R": {
+            "feedback_explanation": "\"{source_str}\" seems to be in the wrong word form.",
+            "feedback_suggestion": "Consider changing \"{source_str}\" to \"{corrected_str}.\""
+        }
+    },
+    "NOUN:INFL": {
+        "title": "Noun Inflection",
+        "R": {
+            "feedback_explanation": "The form of the noun \"{source_str}\" seems incorrect.",
+            "feedback_suggestion": "Consider changing \"{source_str}\" to \"{corrected_str}.\""
+        }
+    },
+    "NOUN:NUM": {
+        "title": "Noun Number",
+        "R": {
+            "feedback_explanation": "The number (singular or plural) of the noun \"{source_str}\" doesn't seem right in this context.",
+            "feedback_suggestion": "Consider changing \"{source_str}\" to \"{corrected_str}.\""
+        }
+    },
+    "ORTH": {
+        "title": "Orthography"
+    },
+    "SPELL": {
+        "title": "Spelling",
+        "R": {
+            "feedback_explanation": "\"{source_str}\" may be mispelled.",
+            "feedback_suggestion": "Consider changing \"{source_str}\" to \"{corrected_str}.\""
+        }
+    },
+    "VERB:INFL": {
+        "title": "Verb Inflection",
+        "R": {
+            "feedback_explanation": "The form of the verb \"{source_str}\" seems incorrect.",
+            "feedback_suggestion": "Consider changing \"{source_str}\" to \"{corrected_str}.\""
+        }
+    },
+    "VERB:SVA": {
+        "title": "Subject-Verb Agreement",
+        "R": {
+            "feedback_explanation": "The form of the verb \"{source_str}\" does not agree with the subject of the sentence.",
+            "feedback_suggestion": "Change \"{source_str}\" to a form that agrees with the subject."
+        }
+    },
+    "WO": {
+        "title": "Word Order",
+        "R": {
+            "feedback_explanation": "The order of the words in \"{source_str}\" seems incorrect or unnatural.",
+            "feedback_suggestion": "Consider changing the word order to \"{corrected_str}.\""
+        }
+    },
+    "SPACE": {
+        "title": "Spacing",
+        "M": {
+            "feedback_explanation": "There seems to be a missing space in \"{source_str}.\"",
+            "feedback_suggestion": "Consider adding a space to make it \"{corrected_str}.\""
+        },
+        "U": {
+            "feedback_explanation": "There seems to be extra spacing here.",
+            "feedback_suggestion": "Consider removing some of the spacing."
+        },
+        "R": {
+            "feedback_explanation": "The spacing around \"{source_str}\" seems incorrect.",
+            "feedback_suggestion": "Consider changing the spacing to \"{corrected_str}.\""
+        }
+    }
+}
