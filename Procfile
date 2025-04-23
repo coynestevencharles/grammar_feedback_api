@@ -1,0 +1,1 @@
+web: gunicorn -w 1 -k uvicorn.workers.UvicornWorker application:application --bind 127.0.0.1:8000
