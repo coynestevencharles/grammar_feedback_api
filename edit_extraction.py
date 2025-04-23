@@ -7,6 +7,7 @@ import logging
 from typing import List, Tuple, Dict, Any, Optional
 from langchain.prompts import PromptTemplate
 import time
+import os
 
 from prompts import edit_extraction_prompt_v1
 import config
@@ -36,12 +37,12 @@ def load_edit_llm() -> Optional[ChatOpenAI]:
     global edit_llm
     if edit_llm is None:
         try:
-            logger.info("Loading Edit Refinement LLM...")
             edit_llm = ChatOpenAI(
                 model=config.EDIT_LLM_NAME,
                 temperature=0.0,
                 max_tokens=config.EDIT_LLM_MAX_TOKENS,
                 model_kwargs={"response_format": {"type": "json_object"}},
+                api_key=os.getenv("OPENAI_API_KEY"),
             )
             logger.info(
                 f"Edit Refinement LLM loaded successfully: {config.EDIT_LLM_NAME}"

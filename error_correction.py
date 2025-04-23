@@ -31,7 +31,6 @@ def load_correction_llm() -> Optional[ChatOpenAI]:
     global correction_llm
     if correction_llm is None:
         try:
-            logger.info("Loading Correction LLM...")
             correction_llm = ChatOpenAI(
                 model=config.CORRECTION_LLM_NAME,
                 temperature=0.0,

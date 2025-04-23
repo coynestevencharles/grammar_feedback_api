@@ -52,12 +52,12 @@ def load_feedback_llm() -> Optional[ChatOpenAI]:
     global feedback_llm
     if feedback_llm is None:
         try:
-            logger.info("Loading Feedback LLM...")
             feedback_llm = ChatOpenAI(
                 model=config.FEEDBACK_LLM_NAME,
                 temperature=0.0,
                 max_tokens=config.FEEDBACK_LLM_MAX_TOKENS,
                 model_kwargs={"response_format": {"type": "json_object"}},
+                api_key=os.getenv("OPENAI_API_KEY"),
             )
             logger.info(f"Feedback LLM loaded successfully: {config.FEEDBACK_LLM_NAME}")
         except Exception as e:
@@ -429,7 +429,7 @@ async def get_llm_feedback(
             # Compare cleaned text to original sentence
             if cleaned_for_comparison != sentence:
                 logger.warning(
-                    f"Cleaned highlighted sentence from LLM does not match original sentence for index {item_index}. Spans may be unreliable. Original: '{sentence}', Cleaned: '{cleaned_for_comparison}'",
+                    f"Cleaned highlighted sentence from LLM does not match original sentence for index {item_index}. Spans may be unreliable. Original: '{sentence}', Highlighted: '{highlighted_sentence}', Cleaned: '{cleaned_for_comparison}'",
                     extra={"response_id": response_id},
                 )
                 # Skip this feedback
