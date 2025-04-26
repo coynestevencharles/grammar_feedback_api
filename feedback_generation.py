@@ -317,7 +317,7 @@ async def get_llm_feedback(
             and "usage_metadata" in raw_llm_response
             and raw_llm_response["usage_metadata"]
         ):
-            logger.info(
+            logger.debug(
                 "Feedback LLM token usage.",
                 extra={
                     "response_id": response_id,

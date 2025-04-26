@@ -70,7 +70,7 @@ async def save_request_analysis_data(data: dict, response_id: str):
                 Body=json_data.encode("utf-8"),
                 ContentType="application/json",
             )
-            logger.info(
+            logger.debug(
                 f"Successfully saved analysis data to S3",
                 extra={
                     "response_id": response_id,
@@ -90,7 +90,7 @@ async def save_request_analysis_data(data: dict, response_id: str):
         try:
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(json_data)
-            logger.info(
+            logger.debug(
                 f"Successfully saved analysis data locally",
                 extra={"response_id": response_id, "local_path": file_path},
             )
